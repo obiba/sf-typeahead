@@ -1,0 +1,13 @@
+<div class="form-group"
+     ng-controller="TypeaheadController"
+     ng-class="{'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess(), 'has-feedback': form.feedback !== false }"
+     schema-validate="form" sf-field-model >
+  <pre>{{form|json}}</pre>
+  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
+  <input type="text"
+         sf-field-model="replaceAll"
+         ng-model="$$value$$"
+         uib-typeahead="value for value in form.values | filter:$viewValue | limitTo:8"
+         class="form-control">
+  <span class="help-block" sf-message="form.description"></span>
+</div>

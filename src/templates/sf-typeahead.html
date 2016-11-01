@@ -2,7 +2,7 @@
      ng-controller="TypeaheadController"
      ng-class="{'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess(), 'has-feedback': form.feedback !== false }"
      schema-validate="form" sf-field-model >
-  <pre>{{form|json}}</pre>
+  <!--<pre>{{form|json}}</pre>-->
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <input type="text"
          sf-field-model="replaceAll"

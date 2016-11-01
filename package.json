@@ -1,7 +1,7 @@
 {
-  "name": "sf-localized-string",
-  "version": "1.2.0",
-  "description": "sf localized string add-on for Angular Schema Form.",
+  "name": "sf-typeahead",
+  "version": "1.0.0",
+  "description": "sf typeahead add-on for Angular Schema Form.",
   "author": "obiba",
   "license": "MIT",
   "devDependencies": {

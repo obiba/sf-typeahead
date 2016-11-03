@@ -25,8 +25,6 @@ angular.module('sfTypeahead', [
 
   }])
   .controller('TypeaheadController', ['$scope', function ($scope) {
-    console.log('>>>>',$scope);
-
     $scope.$watch('ngModel.$modelValue', function () {
       if ($scope.ngModel.$validate) {
         // Make sure that allowInvalid is always true so that the model is preserved when validation fails

@@ -36,9 +36,19 @@
 
         $scope.model = {};
 
-        $scope.sfOptions = {formDefaults: { values: ['aaaaa','zzzzz','wwwww']}};
+        $scope.sfOptions = {
+          formDefaults: { values: ['aaaaa','zzzzz','wwwww']},
+          validationMessage: {
+            'duplicate': 'You have selected "zzzzz"! This is a test for injected custum error msg and validators.'
+          },
+          validators: {
+            'duplicate': function (value) {
+              return !value || 'zzzzz' !== value;
+            }
+          }
+        };
 
-        $scope.debug = {schema: angular.copy($scope.schema), form: angular.copy($scope.form)};
+        $scope.debug = {schema: angular.copy($scope.schema), form: angular.copy($scope.form), options: angular.copy($scope.sfOptions)};
 
       });
 
@@ -74,6 +84,12 @@
             <div class="col-md-12">
               <h4>Schema</h4>
               <pre>{{debug.schema | json}}</pre>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Options</h4>
+              <pre>{{debug.options | json}}</pre>
             </div>
           </div>
         </div>

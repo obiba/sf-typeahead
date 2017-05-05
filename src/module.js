@@ -9,6 +9,9 @@ angular.module('sfTypeahead', [
         var f = schemaFormProvider.stdFormObj(name, schema, options);
         f.key = options.path;
         f.type = 'typeahead';
+        if (options.global.validators) {
+          f.$validators = options.global.validators;
+        }
         options.lookup[sfPathProvider.stringify(options.path)] = f;
         return f;
       }

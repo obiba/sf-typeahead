@@ -30,9 +30,6 @@ angular.module('sfTypeahead', [
   .controller('TypeaheadController', ['$scope', function ($scope) {
     $scope.$watch('ngModel.$modelValue', function () {
       if ($scope.ngModel.$validate) {
-        // Make sure that allowInvalid is always true so that the model is preserved when validation fails
-        $scope.ngModel.$options = $scope.ngModel.$options || {};
-        $scope.ngModel.$options = {allowInvalid: true};
         $scope.ngModel.$validate();
         if ($scope.ngModel.$invalid) { // The field must be made dirty so the error message is displayed
           $scope.ngModel.$dirty = true;

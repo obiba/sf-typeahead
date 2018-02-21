@@ -8,6 +8,7 @@
          ng-readonly="form.readonly"
          sf-field-model="replaceAll"
          ng-model="$$value$$"
+         ng-model-options="{ allowInvalid: true }"
          typeahead-editable="false"
          uib-typeahead="value for value in form.values | filter:$viewValue | limitTo:8"
          class="form-control">
